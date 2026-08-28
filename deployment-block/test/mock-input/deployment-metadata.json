@@ -1,0 +1,30 @@
+{
+    "version": 1,
+    "deployCounter": 1,
+    "samplesPerInference": 9216,
+    "axesCount": 1,
+    "frequency": 0,
+    "sensor": "camera",
+    "classes": ["hardhat", "no_hardhat", "background"],
+    "project": {
+        "name": "Worksite safety monitor",
+        "id": 424242,
+        "owner": "Jenny Speelman",
+        "studioHost": "studio.edgeimpulse.com"
+    },
+    "impulse": {
+        "inputBlocks": [{ "id": 1, "type": "image", "name": "Image", "title": "Image (96x96)" }],
+        "dspBlocks": [{ "id": 2, "type": "image", "name": "Image", "title": "Image" }],
+        "learnBlocks": [{ "id": 3, "type": "keras-object-detection", "name": "Object detection", "title": "Object detection (FOMO)" }]
+    },
+    "tfliteModels": [
+        {
+            "modelPath": "/home/input/trained.tflite",
+            "details": { "modelType": "int8" }
+        }
+    ],
+    "folders": {
+        "input": "/home/input",
+        "output": "/home/output"
+    }
+}

@@ -1,0 +1,4 @@
+edge_impulse_linux>=1.0.0
+openai>=1.0.0
+pyyaml>=6.0
+opencv-python>=4.8; platform_machine != "aarch64"

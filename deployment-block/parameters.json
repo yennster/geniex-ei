@@ -1,0 +1,14 @@
+{
+    "version": 1,
+    "type": "deploy",
+    "info": {
+        "name": "GenieX agent app (Linux)",
+        "description": "Ready-to-run Python app for Snapdragon Linux boards (Dragonwing IQ-9075/IQ-8275): your impulse watches the camera on the NPU, and detections wake a local LLM/VLM served by Qualcomm GenieX for on-device reasoning and actions.",
+        "category": "firmware",
+        "mountLearnBlock": false,
+        "supportsEonCompiler": false,
+        "showOptimizations": false,
+        "cliArguments": "",
+        "privileged": false
+    }
+}

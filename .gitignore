@@ -1,0 +1,7 @@
+geniex/
+ei-block-data/
+__pycache__/
+*.pyc
+.venv/
+deployment-block/test/output/
+events.jsonl
