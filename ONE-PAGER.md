@@ -1,7 +1,5 @@
 # GenieX × Edge Impulse — Integration One-Pager
 
-**Author:** Jenny Speelman · **Date:** August 28, 2026 · **Status:** working prototype (local validation done, device validation pending)
-
 ## The opportunity
 
 [GenieX](https://github.com/qualcomm/GenieX) is Qualcomm's open-source on-device LLM/VLM runtime (the community version of GENIE): any GGUF from Hugging Face via llama.cpp, or pre-compiled Qualcomm AI Hub bundles via QAIRT, running on the Hexagon NPU. Edge Impulse builds the *other* half of edge AI: tiny always-on sensor models, trained and deployed from Studio. Both are Qualcomm products, and both validate on the same hardware — **Dragonwing IQ-9075 / IQ-8275 EVKs** (Linux), Snapdragon X (Windows), Snapdragon 8 Elite (Android).
@@ -12,7 +10,7 @@ Together they complete the **cascade pattern**: the milliwatt-class Edge Impulse
 
 - **OpenAI-compatible local server** (`geniex serve`, port 18181): chat completions with `image_url` vision parts, `tools` function calling, a `/v1/logits` endpoint, and configurable CORS origins. Anything that speaks OpenAI speaks GenieX.
 - **Audio input** works on the llama.cpp path (e.g. Gemma-4's conformer audio encoder) — one turn can mix text + image + audio.
-- **Snapdragon-only** (no x86): GenieX cannot run in Edge Impulse's cloud, so every integration runs on the user's own silicon — which *is* the pitch: private, free, offline.
+- **Snapdragon-only** (no x86): GenieX is built for the user's own Snapdragon silicon — a natural division of labor where Edge Impulse Studio handles data, training, and MLOps, and inference of every size runs on-device: private, free, offline.
 
 ## Integration directions
 
