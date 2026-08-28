@@ -43,7 +43,28 @@ docker build -t geniex-agent-block .
 docker run --rm -v $PWD:/home geniex-agent-block --metadata /home/input/deployment-metadata.json
 ```
 
-Then push it to your organization with `edge-impulse-blocks init` + `edge-impulse-blocks push`.
+### Push to an Edge Impulse organization
+
+Custom deployment blocks are an organization feature on the **Enterprise plan**
+(the free Enterprise trial works; only custom *learning* blocks can be pushed to
+a developer profile). You need an Edge Impulse account that is a member of the
+organization, and the Edge Impulse CLI (`npm install -g edge-impulse-cli`).
+
+```bash
+cd deployment-block
+edge-impulse-blocks init     # log in and pick your organization; reads the existing parameters.json
+edge-impulse-blocks push     # uploads the block; the container image builds on Edge Impulse's side
+```
+
+`init` writes `.ei-block-config`, which ties this folder to your organization
+and block ID. It is gitignored here so the repo stays org-agnostic — teammates
+run `init` once with their own login (use `edge-impulse-blocks init --clean` to
+reset a stale login/org association).
+
+Once pushed, open any project in that organization, go to the **Deployment**
+page, and select **GenieX agent app (Linux)** from the deployment options —
+**Build** produces the `deploy.zip` described above. To publish an update, edit
+the block and run `edge-impulse-blocks push` again.
 
 ## geniex/
 

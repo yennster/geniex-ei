@@ -1,5 +1,6 @@
 geniex/
 ei-block-data/
+.ei-block-config
 __pycache__/
 *.pyc
 .venv/
